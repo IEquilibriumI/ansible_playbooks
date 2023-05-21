@@ -1,0 +1,15 @@
+---
+- name: reboot
+  become: true
+
+  vars_prompt:
+    - name: host
+      prompt: Enter host name
+      private: false
+
+  hosts: "{{ host }}"
+
+  tasks:
+    - name: reboot target host
+      reboot:
+        reboot_timeout: 3600
