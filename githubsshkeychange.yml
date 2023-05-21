@@ -1,0 +1,33 @@
+---
+- name: Change SSH Key on target host
+  become: true
+
+  vars_prompt:
+    - name: host
+      prompt: Enter host name
+      private: false
+
+    - name: githubuser
+      prompt: Enter your Github User
+      private: false
+
+    - name: authkeyuser
+      prompt: Enter the username from target host
+      private: false
+
+  hosts: "{{ host }}"
+
+  tasks:
+    - name: Fetch GitHub SSH key
+      uri:
+        url: "https://api.github.com/users/{{ githubuser }}/keys"
+        return_content: yes
+        headers:
+          Accept: "application/vnd.github.v3+json"
+      register: github_keys
+
+    - name: Install the public key
+      authorized_key:
+        user: "{{ authkeyuser }}"
+        state: present
+        key: "{{ github_keys.json[0].key }}"
