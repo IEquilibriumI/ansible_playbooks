@@ -7,12 +7,8 @@ this method will ask for input of the host name which you can use from your inve
 you can specify individual host or groups or all
 
 # call playbook examples
-.     ansible-playbook playbooks/reboot.yml -K -i inventory/hosts
-     
-.     ansible-playbook playbooks/createuser.yml -K -i inventory/hosts
-     
-.     ansible-playbook playbooks/update_upgrade.yml -K -i inventory/hosts
-     
-.     ansible-playbook playbooks/nanoinstall.yml -K -i inventory/hosts
-     
-.     ansible-playbook playbooks/githubsshkeychange.yml -K -i inventory/hosts
+0.     ansible-playbook playbooks/reboot.yml -K -i inventory/hosts
+0.     ansible-playbook playbooks/createuser.yml -K -i inventory/hosts
+0.     ansible-playbook playbooks/update_upgrade.yml -K -i inventory/hosts
+0.     ansible-playbook playbooks/nanoinstall.yml -K -i inventory/hosts    
+0.     ansible-playbook playbooks/githubsshkeychange.yml -K -i inventory/hosts
