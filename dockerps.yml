@@ -1,0 +1,17 @@
+---
+- name: docker ps
+  become: true
+
+  vars_prompt:
+    - name: host
+      prompt: Enter host name
+      private: false
+
+  hosts: "{{ host }}"
+
+  tasks:
+    - name: docker ps
+      ansible.builtin.shell: docker ps
+      register: ps
+
+    - debug: msg={{ ps.stdout_lines }}
