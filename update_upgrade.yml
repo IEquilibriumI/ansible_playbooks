@@ -1,0 +1,16 @@
+---
+- name: update_upgrade
+  become: true
+
+  vars_prompt:
+    - name: host
+      prompt: Enter host name
+      private: false
+
+  hosts: "{{ host }}"
+
+  tasks:
+    - name: update_upgrade
+      apt:
+        update_cache: yes
+        upgrade: 'yes'
