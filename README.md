@@ -7,5 +7,5 @@ this method will ask for input of the host name which you can use from your inve
 you can specify individual host or groups or all
 
 # call playbook example
-1.     ansible-playbook playbooks/reboot.yml -K -i inventory/hosts
-2.     ansible-playbook playbooks/createuser.yml -K -i inventory/hosts
+1.   ansible-playbook playbooks/reboot.yml -K -i inventory/hosts
+2.   ansible-playbook playbooks/createuser.yml -K -i inventory/hosts
