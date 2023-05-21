@@ -1,7 +1,7 @@
-# ansible_playbooks
+# ansible playbooks
 
 all playbooks are called by this method from within the /etc/ansible folder
-these methods are based on using pub+priv ssh key autha and not user+pass
+these methods are based on using pub+priv ssh key auth and not user+pass
 
 this method will ask for host name which you can use from your inventory/hosts file if you have set that up correctly
 you can specify individual host or groups or all
