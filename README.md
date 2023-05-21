@@ -8,7 +8,8 @@ you can specify individual host or groups or all
 
 # call playbook examples
 0.     ansible-playbook playbooks/reboot.yml -K -i inventory/hosts
-0.     ansible-playbook playbooks/createuser.yml -K -i inventory/hosts
-0.     ansible-playbook playbooks/update_upgrade.yml -K -i inventory/hosts
-0.     ansible-playbook playbooks/nanoinstall.yml -K -i inventory/hosts    
-0.     ansible-playbook playbooks/githubsshkeychange.yml -K -i inventory/hosts
+1.     ansible-playbook playbooks/createuser.yml -K -i inventory/hosts
+2.     ansible-playbook playbooks/update_upgrade.yml -K -i inventory/hosts
+3.     ansible-playbook playbooks/nanoinstall.yml -K -i inventory/hosts    
+4.     ansible-playbook playbooks/githubsshkeychange.yml -K -i inventory/hosts
+5.     ansible-playbook playbooks/dockerps.yml -K -i inventory/hosts
