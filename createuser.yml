@@ -1,0 +1,33 @@
+---
+- name: Create user and grant sudo privileges
+  become: true
+
+  vars_prompt:
+    - name: host
+      prompt: Enter host name
+      private: false
+
+    - name: username
+      prompt: Enter Username
+      private: false
+
+    - name: password
+      prompt: Enter Password
+      private: true
+
+  hosts: "{{ host }}"
+
+  tasks:
+    - name: Create user
+      user:
+        name: "{{ username }}"
+        password: "{{ password | password_hash('sha512') }}"
+        state: present
+
+    - name: Grant sudo privileges
+      lineinfile:
+        dest: "/etc/sudoers"
+        line: "{{ username }} ALL=(ALL) NOPASSWD: ALL"
+        validate: "visudo -cf %s"
+        insertafter: "EOF"
+        state: present
