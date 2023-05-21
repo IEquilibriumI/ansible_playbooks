@@ -10,3 +10,4 @@ you can specify individual host or groups or all
 1.     ansible-playbook playbooks/reboot.yml -K -i inventory/hosts
 2.     ansible-playbook playbooks/createuser.yml -K -i inventory/hosts
 3.     ansible-playbook playbooks/update_upgrade.yml -K -i inventory/hosts
+4.     ansible-playbook playbooks/nanoinstall.yml -K -i inventory/hosts
